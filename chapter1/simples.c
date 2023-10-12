@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
 
     local.sin_family         = AF_INET;
     local.sin_port           = htons(7500);
-    local.sin_addr.s_addr    = htonl(INADDR_ANY);
+    // local.sin_addr.s_addr    = htonl(INADDR_ANY);
+    local.sin_addr.s_addr    = inet_addr("0.0.0.0");
 
     s = socket(AF_INET, SOCK_STREAM, 0);
     if (s < 0)
